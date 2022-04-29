@@ -26,7 +26,8 @@ class SchoolFragment : BaseFragment() {
             schoolViewModel.scoreItem.observe(viewLifecycleOwner){
                 when(it){
                     SchoolState.LOADING ->{
-
+                        Toast.makeText(activity, "Loading...", Toast.LENGTH_SHORT)
+                            .show()
                     }
                     is SchoolState.SUCCESS<*>->{
 
@@ -60,9 +61,9 @@ class SchoolFragment : BaseFragment() {
     private fun bind(schoolItem: SchoolItem) {
         binding.tvSchoolName.text = schoolItem.school_name
         binding.tvTakers.text = context?.getString(R.string.school_taker, schoolItem.sat_takers)
-        binding.tvCritical.text = schoolItem.sat_critical
-        binding.tvMath.text = schoolItem.sat_math
-        binding.tvWriting.text = schoolItem.sat_writing
+        binding.tvCritical.text = context?.getString(R.string.school_critical,schoolItem.sat_critical)
+        binding.tvMath.text = context?.getString(R.string.school_math,schoolItem.sat_math)
+        binding.tvWriting.text = context?.getString(R.string.school_writing,schoolItem.sat_writing)
     }
 
 }

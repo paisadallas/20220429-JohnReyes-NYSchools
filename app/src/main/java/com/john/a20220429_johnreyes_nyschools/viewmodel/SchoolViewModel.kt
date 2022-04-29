@@ -23,7 +23,6 @@ class SchoolViewModel(
     private val _sortedSchoolItem : MutableLiveData<SchoolState> = MutableLiveData(SchoolState.LOADING)
     val scoreItem: LiveData<SchoolState> get() = _sortedSchoolItem
 
-
     /**
      * Creating coroutine with viewModelScope and launch
      *
@@ -34,7 +33,6 @@ class SchoolViewModel(
      * @param [ioDipspatcher] - Dispatcher used as a fallback for
      * time-related operations (delay, withTimeout) and to handle
      * rejected tasks from other dispatchers is also shut down.
-
      */
 
     fun getSchool(){

@@ -33,7 +33,6 @@ class ListFragment : BaseFragment() {
             val intention = ListFragmentDirections.actionListFragmentToSchoolFragment(data)
 
             findNavController().navigate(intention)
-           // schoolViewModel.getScore()
         }
     }
 
@@ -55,15 +54,14 @@ class ListFragment : BaseFragment() {
         schoolViewModel.school.observe(viewLifecycleOwner){
             when(it){
                 SchoolState.LOADING ->{
-
+                    Toast.makeText(activity, "Loading...", Toast.LENGTH_SHORT)
+                    .show()
                 }
                 is SchoolState.SUCCESS<*>->{
                     var schools = it?.school as School
                     schools.let {
                         schoolAdapter.update(it)
                     }
-
-
                 }
                 is SchoolState.ERROR ->{
                     Toast.makeText(requireContext(), it.error.localizedMessage, Toast.LENGTH_LONG)
