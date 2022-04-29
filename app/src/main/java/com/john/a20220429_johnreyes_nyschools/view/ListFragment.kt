@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 
 import android.widget.LinearLayout
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -61,8 +62,14 @@ class ListFragment : BaseFragment() {
                     schools.let {
                         schoolAdapter.update(it)
                     }
+
+
                    // Log.d("RECEIVING",schoolItem[0].school_name)
 
+                }
+                is SchoolState.ERROR ->{
+                    Toast.makeText(requireContext(), it.error.localizedMessage, Toast.LENGTH_LONG)
+                        .show()
                 }
             }
         }

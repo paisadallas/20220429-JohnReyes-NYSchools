@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.navigation.fragment.navArgs
 import com.john.a20220429_johnreyes_nyschools.databinding.FragmentSchoolBinding
 import com.john.a20220429_johnreyes_nyschools.model.School
@@ -44,6 +45,11 @@ class SchoolFragment : BaseFragment() {
                                 binding.tvSchoolName.text = "School no found!"
                             }
                         }
+                    }
+
+                    is SchoolState.ERROR ->{
+                        Toast.makeText(requireContext(), it.error.localizedMessage, Toast.LENGTH_LONG)
+                            .show()
                     }
                 }
             }

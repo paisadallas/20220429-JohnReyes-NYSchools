@@ -42,7 +42,7 @@ class SchoolViewModel(
         }
     }
 
-    private fun getScore(){
+     fun getScore(){
         viewModelScope.launch (ioDispatcher) {
             try {
                 val respond = apiRepositoryAPI.getAllScore()
