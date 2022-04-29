@@ -13,8 +13,6 @@ class RepositoryImplement(
 
     override suspend fun getAllScore(): Response<School> =api.getScore()
 
-
-
 }
 
 interface RepositoryAPI {

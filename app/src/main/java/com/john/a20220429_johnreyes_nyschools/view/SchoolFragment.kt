@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.navArgs
+import com.john.a20220429_johnreyes_nyschools.R
 import com.john.a20220429_johnreyes_nyschools.databinding.FragmentSchoolBinding
 import com.john.a20220429_johnreyes_nyschools.model.School
 import com.john.a20220429_johnreyes_nyschools.model.SchoolItem
@@ -22,7 +23,7 @@ class SchoolFragment : BaseFragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-            schoolViewModel.schoolItem.observe(viewLifecycleOwner){
+            schoolViewModel.scoreItem.observe(viewLifecycleOwner){
                 when(it){
                     SchoolState.LOADING ->{
 
@@ -30,14 +31,13 @@ class SchoolFragment : BaseFragment() {
                     is SchoolState.SUCCESS<*>->{
 
                         var data = false
-                        var schools = it?.school as School
+                        val schools = it.school as School
 
-                        schools.let {schools ->
+                        schools.let { schoolsItem ->
 
-                            for (s in schools.indices){
-
-                                if(args.dbn == schools[s].dbn){
-                                    bind(schools[s])
+                            schoolsItem.forEach { school ->
+                                if(args.dbn == school.dbn){
+                                    bind(school)
                                     data = true
                                 }
                             }
@@ -59,7 +59,7 @@ class SchoolFragment : BaseFragment() {
 
     private fun bind(schoolItem: SchoolItem) {
         binding.tvSchoolName.text = schoolItem.school_name
-        binding.tvTakers.text = schoolItem.sat_takers
+        binding.tvTakers.text = context?.getString(R.string.school_taker, schoolItem.sat_takers)
         binding.tvCritical.text = schoolItem.sat_critical
         binding.tvMath.text = schoolItem.sat_math
         binding.tvWriting.text = schoolItem.sat_writing

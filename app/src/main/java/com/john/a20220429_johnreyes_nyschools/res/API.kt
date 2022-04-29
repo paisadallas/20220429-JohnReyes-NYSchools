@@ -14,7 +14,6 @@ interface API {
     @GET(SAT_SCORE)
     suspend fun getScore():Response<School>
 
-
     companion object{
         const val BASE_URL = "https://data.cityofnewyork.us/"
         private const val SCHOOL_LIST = "resource/s3k6-pzi2.json"

@@ -38,10 +38,10 @@
 
         <TextView
             android:id="@+id/tv_critical"
-            android:layout_width="183dp"
-            android:layout_height="247dp"
-            android:textAlignment="center"
+            android:layout_width="204dp"
+            android:layout_height="250dp"
             android:gravity="center"
+            android:textAlignment="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/tv_takers"
             app:layout_constraintTop_toBottomOf="@id/tv_school_name" />

@@ -27,7 +27,7 @@ class ListFragment : BaseFragment() {
 
     private val schoolAdapter by lazy {
         SchoolAdapter(){
-            Log.d("CLICK","YOU DID CLICK"+it.school_name)
+
             var data = it.dbn
 
             val intention = ListFragmentDirections.actionListFragmentToSchoolFragment(data)
@@ -63,8 +63,6 @@ class ListFragment : BaseFragment() {
                         schoolAdapter.update(it)
                     }
 
-
-                   // Log.d("RECEIVING",schoolItem[0].school_name)
 
                 }
                 is SchoolState.ERROR ->{

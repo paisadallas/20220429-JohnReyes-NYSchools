@@ -22,7 +22,7 @@ import org.junit.Test
 class SchoolViewModelTest{
 
     @get:Rule
-    var rule = InstantTaskExecutorRule()
+    var rule = InstantTaskExecutorRule()//asigmar main thread
 
     private val testDispatcher = UnconfinedTestDispatcher()
 
@@ -95,7 +95,7 @@ class SchoolViewModelTest{
     @Test
     fun `get all school item when trying to load from server laoding state`() {
         val stateList = mutableListOf<SchoolState>()
-        target.schoolItem.observeForever{
+        target.scoreItem.observeForever{
             stateList.add(it)
         }
 
@@ -109,13 +109,13 @@ class SchoolViewModelTest{
 
     @Test
     fun `get all school item when trying to load from server returns success state`() = runTest {
-        coEvery { mockRepository.getAllData() } returns mockk{
+        coEvery { mockRepository.getAllScore() } returns mockk{
             every { isSuccessful } returns true
-            every { body() } returns mockk{ mockk<School>()}
+            every { body() } returns mockk()
         }
 
         val stateList = mutableListOf<SchoolState>()
-        target.schoolItem.observeForever{
+        target.scoreItem.observeForever{
             stateList.add(it)
         }
 
@@ -127,9 +127,9 @@ class SchoolViewModelTest{
     }
 
     @Test
-    fun `get all school item when trying to load from server returns error state`() {
+    fun `get school score item when trying to load from server returns error state`() {
         val stateList = mutableListOf<SchoolState>()
-        target.schoolItem.observeForever{
+        target.scoreItem.observeForever{
             stateList.add(it)
         }
 

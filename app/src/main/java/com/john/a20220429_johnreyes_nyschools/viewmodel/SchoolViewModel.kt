@@ -21,7 +21,21 @@ class SchoolViewModel(
     val school: LiveData<SchoolState> get() = _sortedSchool
 
     private val _sortedSchoolItem : MutableLiveData<SchoolState> = MutableLiveData(SchoolState.LOADING)
-    val schoolItem: LiveData<SchoolState> get() = _sortedSchoolItem
+    val scoreItem: LiveData<SchoolState> get() = _sortedSchoolItem
+
+
+    /**
+     * Creating coroutine with viewModelScope and launch
+     *
+     * launch - Launches a new coroutine without blocking the current thread and returns a
+     * reference to the coroutine as a Job. The coroutine is cancelled when the resulting
+     * job is cancelled.
+     *
+     * @param [ioDipspatcher] - Dispatcher used as a fallback for
+     * time-related operations (delay, withTimeout) and to handle
+     * rejected tasks from other dispatchers is also shut down.
+
+     */
 
     fun getSchool(){
         viewModelScope.launch (ioDispatcher) {
@@ -33,7 +47,7 @@ class SchoolViewModel(
                         getScore()
                     }
                 }else{
-                    throw Exception("response null")
+                    throw Exception(respond.message())
                 }
             }
             catch (e:java.lang.Exception){
@@ -51,7 +65,7 @@ class SchoolViewModel(
                         _sortedSchoolItem.postValue(SchoolState.SUCCESS(it))
                     }
                 }else{
-                    throw Exception("response null")
+                    throw Exception(respond.message())
                 }
             }
             catch (e:java.lang.Exception){
