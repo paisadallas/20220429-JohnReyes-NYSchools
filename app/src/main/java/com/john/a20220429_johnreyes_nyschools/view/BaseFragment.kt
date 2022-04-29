@@ -9,7 +9,4 @@ open class BaseFragment:Fragment() {
 
     protected val schoolViewModel: SchoolViewModel by sharedViewModel()
 
-//    private val sss by lazy {
-//        ViewModelProvider(requireActivity())[SchoolViewModel::class.java]
-//    }
 }
