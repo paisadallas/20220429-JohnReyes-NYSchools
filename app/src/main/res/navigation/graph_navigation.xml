@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/listFragment"
-        android:name="com.john.a20220429_johnreyes_nyschools.view.ListFragment"
+        android:name="com.john.a20220526_johnreyes_nyschools.view.ListFragment"
         android:label="fragment_list"
         tools:layout="@layout/fragment_list" >
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/schoolFragment"
-        android:name="com.john.a20220429_johnreyes_nyschools.view.SchoolFragment"
+        android:name="com.john.a20220526_johnreyes_nyschools.view.SchoolFragment"
         android:label="fragment_school"
         tools:layout="@layout/fragment_school" >
         <argument

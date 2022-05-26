@@ -1,4 +1,4 @@
-package com.john.a20220429_johnreyes_nyschools.view
+package com.john.a20220526_johnreyes_nyschools.view
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,11 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.navArgs
-import com.john.a20220429_johnreyes_nyschools.R
-import com.john.a20220429_johnreyes_nyschools.databinding.FragmentSchoolBinding
-import com.john.a20220429_johnreyes_nyschools.model.School
-import com.john.a20220429_johnreyes_nyschools.model.SchoolItem
-import com.john.a20220429_johnreyes_nyschools.utils.SchoolState
+import com.john.a20220526_johnreyes_nyschools.R
+import com.john.a20220526_johnreyes_nyschools.databinding.FragmentSchoolBinding
+import com.john.a20220526_johnreyes_nyschools.model.School
+import com.john.a20220526_johnreyes_nyschools.model.SchoolItem
+import com.john.a20220526_johnreyes_nyschools.utils.SchoolState
 
 class SchoolFragment : BaseFragment() {
 
@@ -43,7 +43,7 @@ class SchoolFragment : BaseFragment() {
                                 }
                             }
                             if (!data){
-                                binding.tvSchoolName.text = "School no found!"
+                                binding.tvSchoolName.text = "School not found!"
                             }
                         }
                     }

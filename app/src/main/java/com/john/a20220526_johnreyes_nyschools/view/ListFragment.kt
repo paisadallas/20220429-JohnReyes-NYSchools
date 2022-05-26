@@ -1,26 +1,18 @@
-package com.john.a20220429_johnreyes_nyschools.view
+package com.john.a20220526_johnreyes_nyschools.view
 
-import android.net.NetworkRequest
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 
-import android.widget.LinearLayout
 import android.widget.Toast
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.john.a20220429_johnreyes_nyschools.R
-import com.john.a20220429_johnreyes_nyschools.adapter.SchoolAdapter
-import com.john.a20220429_johnreyes_nyschools.databinding.FragmentListBinding
-import com.john.a20220429_johnreyes_nyschools.model.School
-import com.john.a20220429_johnreyes_nyschools.model.SchoolItem
-import com.john.a20220429_johnreyes_nyschools.res.API
-import com.john.a20220429_johnreyes_nyschools.utils.SchoolState
-import com.john.a20220429_johnreyes_nyschools.viewmodel.SchoolViewModel
+import com.john.a20220526_johnreyes_nyschools.adapter.SchoolAdapter
+import com.john.a20220526_johnreyes_nyschools.databinding.FragmentListBinding
+import com.john.a20220526_johnreyes_nyschools.model.School
+import com.john.a20220526_johnreyes_nyschools.utils.SchoolState
 
 
 class ListFragment : BaseFragment() {
@@ -50,7 +42,11 @@ class ListFragment : BaseFragment() {
             adapter = schoolAdapter
         }
 
-        schoolViewModel.getSchool()
+
+            schoolViewModel.getSchool()
+
+
+        Log.d("SeeViewModel", "viewModel: ${schoolViewModel} ")
         schoolViewModel.school.observe(viewLifecycleOwner){
             when(it){
                 SchoolState.LOADING ->{
@@ -58,7 +54,7 @@ class ListFragment : BaseFragment() {
                     .show()
                 }
                 is SchoolState.SUCCESS<*>->{
-                    var schools = it?.school as School
+                    val schools = it?.school as School
                     schools.let {
                         schoolAdapter.update(it)
                     }

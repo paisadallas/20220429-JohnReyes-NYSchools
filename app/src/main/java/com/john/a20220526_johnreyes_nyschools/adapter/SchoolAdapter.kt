@@ -1,10 +1,10 @@
-package com.john.a20220429_johnreyes_nyschools.adapter
+package com.john.a20220526_johnreyes_nyschools.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.john.a20220429_johnreyes_nyschools.databinding.SchoolItemBinding
-import com.john.a20220429_johnreyes_nyschools.model.SchoolItem
+import com.john.a20220526_johnreyes_nyschools.databinding.SchoolItemBinding
+import com.john.a20220526_johnreyes_nyschools.model.SchoolItem
 
 class SchoolAdapter(
     private var schoolList:MutableList<SchoolItem> = mutableListOf(),

@@ -1,8 +1,8 @@
-package com.john.a20220429_johnreyes_nyschools
+package com.john.a20220526_johnreyes_nyschools
 
 import android.app.Application
-import com.john.a20220429_johnreyes_nyschools.di.networkModule
-import com.john.a20220429_johnreyes_nyschools.di.viewModelModule
+import com.john.a20220526_johnreyes_nyschools.di.networkModule
+import com.john.a20220526_johnreyes_nyschools.di.viewModelModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 

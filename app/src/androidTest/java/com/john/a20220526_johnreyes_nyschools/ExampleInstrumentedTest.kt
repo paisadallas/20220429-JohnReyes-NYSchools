@@ -1,4 +1,4 @@
-package com.john.a20220429_johnreyes_nyschools
+package com.john.a20220526_johnreyes_nyschools
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

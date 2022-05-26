@@ -1,9 +1,7 @@
-package com.john.a20220429_johnreyes_nyschools.res
+package com.john.a20220526_johnreyes_nyschools.res
 
-import com.john.a20220429_johnreyes_nyschools.model.School
+import com.john.a20220526_johnreyes_nyschools.model.School
 import retrofit2.Response
-
-
 
 class RepositoryImplement(
     private val api: API
@@ -12,11 +10,9 @@ class RepositoryImplement(
         api.getSchool()
 
     override suspend fun getAllScore(): Response<School> =api.getScore()
-
 }
 
 interface RepositoryAPI {
     suspend fun getAllData():Response<School>
-
     suspend fun getAllScore():Response<School>
 }

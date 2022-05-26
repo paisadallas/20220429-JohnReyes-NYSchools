@@ -1,9 +1,9 @@
-package com.john.a20220429_johnreyes_nyschools.di
+package com.john.a20220526_johnreyes_nyschools.di
 
-import com.john.a20220429_johnreyes_nyschools.res.API
-import com.john.a20220429_johnreyes_nyschools.res.RepositoryAPI
-import com.john.a20220429_johnreyes_nyschools.res.RepositoryImplement
-import com.john.a20220429_johnreyes_nyschools.viewmodel.SchoolViewModel
+import com.john.a20220526_johnreyes_nyschools.res.API
+import com.john.a20220526_johnreyes_nyschools.res.RepositoryAPI
+import com.john.a20220526_johnreyes_nyschools.res.RepositoryImplement
+import com.john.a20220526_johnreyes_nyschools.viewmodel.SchoolViewModel
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.androidx.viewmodel.dsl.viewModel

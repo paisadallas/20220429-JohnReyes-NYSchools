@@ -1,13 +1,11 @@
-package com.john.a20220429_johnreyes_nyschools.viewmodel
+package com.john.a20220526_johnreyes_nyschools.viewmodel
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.john.a20220429_johnreyes_nyschools.res.API
-import com.john.a20220429_johnreyes_nyschools.res.RepositoryAPI
-import com.john.a20220429_johnreyes_nyschools.utils.SchoolState
+import com.john.a20220526_johnreyes_nyschools.res.RepositoryAPI
+import com.john.a20220526_johnreyes_nyschools.utils.SchoolState
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

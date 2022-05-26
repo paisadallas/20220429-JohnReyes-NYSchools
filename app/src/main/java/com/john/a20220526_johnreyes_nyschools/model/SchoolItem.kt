@@ -1,4 +1,4 @@
-package com.john.a20220429_johnreyes_nyschools.model
+package com.john.a20220526_johnreyes_nyschools.model
 
 
 import com.google.gson.annotations.SerializedName

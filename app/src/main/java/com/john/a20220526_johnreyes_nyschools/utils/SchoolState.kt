@@ -1,4 +1,4 @@
-package com.john.a20220429_johnreyes_nyschools.utils
+package com.john.a20220526_johnreyes_nyschools.utils
 
 sealed class SchoolState {
     object LOADING:SchoolState()
